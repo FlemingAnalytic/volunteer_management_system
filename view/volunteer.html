@@ -1,0 +1,23 @@
+<h2> Volunteer for <span id="event_role_title"></span></h2>
+<table>
+<tr><td>Role Description:</td><td><div id="event_role_description"></div></td></tr>
+<tr><td>Role Qualifications:</td><td><div id="event_role_qualifications"></div></td></tr>
+<tr><td>Arrive Minutes Before:</td><td><div id="event_role_pre_mins"></div></td></tr>
+<tr><td>Stay Minutes After:</td><td><div id="event_role_post_mins"></div></td></tr>
+</table>
+<script>
+$(document).ready(function(){
+query=_model_header+"action=volunteers_get_role&event_role_id="+_event_role_id;
+$.get(query,function(data){
+objRole=$.parseJSON(data);
+_event_role_title=objRole.event_role_title;
+$("#event_role_title").html(objRole.event_role_title);
+$("#event_role_description").html(objRole.event_role_description);
+$("#event_role_qualifications").html(objRole.event_role_qualifications);
+$("#event_role_pre_mins").html(objRole.event_role_pre_mins);
+$("#event_role_post_mins").html(objRole.event_role_post_mins);
+$("#dlg_volunteer").removeClass("ui-helper-hidden");
+});	
+
+});
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src='https://code.jquery.com/ui/1.11.1/jquery-ui.min.js'></script>
+<script src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js'></script>
+<script src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.min.js'></script>
+<title></title>
+<meta name="" content="">
+</head>
+<body>
+
+<h2>Create a New  Event</h2>
+<form  id="f1"  action="#">
+Event Short Name (On the Calendar)
+<input type=text id="event_short_name"  required minlength:30 /> <br />
+Event Long Name
+ <input type=text id="event_long_name" /> <br />
+<button id="btn_validate" onclick='check();'>Validate</button></button>
+<button id="btn_new_event" onclick="event_insert();return false;">Complete</button>
+
+<button id="btn_newevent_close" onclick="index_controller();"> Close</button>
+</form>
+
+<script>
+	$(document).ready(function(){
+	$("#f1").validate();
+	 });
+</script>
+</body>
+</html>

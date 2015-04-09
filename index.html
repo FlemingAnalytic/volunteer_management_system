@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="us">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="view/view.js"></script>
+<!-- For some reason this  file is required. Investigate -->
+<script src='lib/js/lib/moment.min.js'></script>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script class='desktop' src='https://code.jquery.com/ui/1.11.2/jquery-ui.min.js'></script>
+<link class='desktop' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css' rel='stylesheet'/>
+<link class='desktop'  href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script class='desktop' src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.js'></script>
+<script class='desktop'  src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js'></script>
+<script class='desktop'  src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.min.js'></script>
+<link class='desktop' href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<link class='desktop' rel="stylesheet" href="http://jqueryvalidation.org/files/demo/site-demos.css">
+<script src="controller/controller.js"></script>
+<link class='desktop' rel='stylesheet' href='lib/css/style.css'>
+<meta charset="utf-8">
+<title>Serve For All Network</title>
+</head>
+<body>
+<script src='lib/js/fb.js'></script>
+<div id="header">
+<img src="lib/images/Raised-Hands.gif" id="raised_hands" align=middle /><span id="welcome"><h3>Welcome to the ServeForAll Network!</h3></span>
+<div id="fb">
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>  
+</div>
+<div id="status">
+Please Log into Facebook.<br />Accept linking to this application.
+<p>This is a clearinghouse where<ul> <li>Charities can list their needs for Volunteers, and</li> <li>Volunteers can sign up to help with event needs.</li></ul>
+</p>
+<p>Event Administrators, do you need to fill certain roles for an event?</p>
+<p>Volunteers, do you want a one-stop shop to identify needs and sign up to help?</p>
+<p>This network is built for you.</p>
+<p>Once approved as an administrator, you can create an event, give its description, assign it to a certain date, and then create roles and number of volunteers needed.</p>
+<p>If you are a volunteer, you can review a calendar of all events open, look for roles that you are qualified to fill, and then sign up!</p>
+<p>Because we use Facebook authentication, no need to register and duplicate info.</p>
+</div>
+</div>
+<hidden id=email name=email value=></hidden> 
+<div id="content" class="ui-helper-hidden">
+<h3>Here are some of the events currently on schedule:</h3>
+<div id="calendar">
+</div>
+<panel id="panel" class="ui-helper-hidden"></panel>
+</div>
+<div id="footer">
+<center>&copy; 2015 Serve For All Network</center>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+    console.log("Calling here before fb finished?");
+ });
+	</script>
+</html>

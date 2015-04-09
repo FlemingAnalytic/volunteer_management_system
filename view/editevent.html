@@ -1,0 +1,54 @@
+<h2>Edit Event</h2>
+
+<form id="frm_edit" name="frm_edit" action="">
+<table>
+<tr><td>Choose a Date</td>
+	<td>Choose Start TIme:</td>
+	<td>Choose End Time:</td></tr>
+<tr>
+	<td><input type=text id="datepicker" name="datepicker" name=datepicker value="Choose Date"/></td>
+	<td><div id="start_time">start_time</div></td>
+	<td><div id="end_time" >end_time</div></td></tr>
+</table>
+<table><tr>
+<td>Event Short Name (On the Calendar)</td><td>Event Long Name</td><td>Location:</td></tr>
+<tr>
+	<td><input type=text id="event_short_name" name="event_short_name" size=20 onChange="_event_short_name=$(this).val();" maxlength="20" size=20/></td>
+     <td><input type=text id="event_long_name" size=50 name="event_long_name" value="" onChange="_event_long_name=$(this).val();" maxlength="50" size=50/></td>
+ <td><input type=text id="event_location" name="event_location" size=30 onChange="_event_location=$(this).val();" /></td></tr>
+</table>
+<table>
+	<tr><td>Address:</td><td>City:</td><td>State:</td><td>Zipcode:</td></tr>
+	<tr>
+		<td><input type=text id="event_address" name="event_address" size=50 onChange="_event_address=$(this).val();" /></td>
+		<td><input type=text id="event_city" name="event_city" size=30 onChange="_event_city=$(this).val();" /></td>
+		<td><input type=text id="event_state" name="event_state" onChange="_event_state=$(this).val();" /></td>
+		<td><input type=text id="event_zip" name="event_zip" onChange="_event_zip=$(this).val();" /></td>
+		</tr>
+</table>
+<table>
+<tr><td>Contact:</td><td>Phone:</td><td>Email:</td></tr>
+	<tr>
+	<td><input type=text id="event_contact" name="event_contact" size=30 onChange="_event_contact=$(this).val();" /></td>
+	<td><input type=text id="event_phone" name="event_phone" onChange="_event_phone=$(this).val();" /></td>
+	
+	<td><input type=text id="event_email" name="event_email" onChange="_event_email=$(this).val();" /></td>
+	</tr>
+</table>
+<p>
+	<b><label for="event_status">Activate Event? (Your event will not display until Activated!) </label>
+	<input type=checkbox id=event_status name=event_status  onclick="_event_status=($(this).is(':checked')?1:0);$('#activate_yesno').html((_event_status==1)?'Yes':'No');" />
+	<span id="activate_yesno">No</span></b>
+</p>
+<table><tr>
+<td><button id="btn_update_event" onclick="event_update();return false;">Update</button></td>
+<td><button id="btn_roles" onclick="event_roles();return false;">Roles</button></td>
+<td><form id="frmedt_2" action=""><button id="btn_editevent_close"> Close</button></form></td>
+</tr></table>
+</form>
+
+<script>
+$(document).ready(function(){
+event_edit_ready();
+});
+</script>

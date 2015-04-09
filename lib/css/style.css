@@ -1,0 +1,91 @@
+	body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		background-color: #fafafa;
+	}
+p{
+	font-size:1.5em;
+}
+ul{
+	font-size:1.5em;
+}
+	#calendar {
+		max-width: 900px;
+		background-color:#e7e0e0;
+		font-size:12px;
+	}
+	#content {
+	font-size:1.5em;
+	margin:0 100px auto;	
+	}
+	#footer {
+	font-size:1em;
+	align: center;	
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	select {
+		width: 200px;
+	}
+	
+	.c200{width: 2000px;}
+	.blu{ color:blue;}
+	.red{color:red;}
+	.grn{color:green;}
+	.s20{width: 200px;}
+	.s30{width: 300px;}
+	.s50{width: 500px;}
+	.s100{size:1000px;color:gold;}
+	.disabled{disabled: true;}
+
+
+@media only screen 
+and (min-width : 300px)
+and (max-width : 600px) {
+
+   .text {
+    font-size: 5px;
+   }
+
+}
+
+    @media only screen 
+    and (min-width : 600px)
+    and (max-width : 1200px) {
+
+       .text {
+        font-size: 12px;
+       }
+
+    }

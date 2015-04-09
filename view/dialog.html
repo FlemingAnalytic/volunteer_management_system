@@ -1,0 +1,66 @@
+<h1>Event Details</h1>
+<div id="dialogcontent"></div>
+<h4>
+	<table>
+		<tr><td>Date:</td><td><span id="dlg_event_date"></span></td></tr>
+		<tr><td>Location:</td><td><span id="dlg_event_location"></span></td></tr>
+		<tr><td>City:</td><td><span id="dlg_event_city"></span></td></tr>
+		<tr><td>Start:</td><td><span id="dlg_event_start_time"></span></td></tr>
+		<tr><td>Contact:</td><td><span id="dlg_event_contact"></span></td></tr>
+		<tr><td>Phone:</td><td><span id="dlg_event_phone"></span></td></tr>
+		<tr><td>Email:</td><td><span id="dlg_event_email"></span></td></tr>
+	</table>
+	</h4>
+<div id="volunteercontent"></div>
+<div id="volunteerroles"></div>
+<div id="volunteerdetail"></div>
+<form action="">
+<button type="button" id="dlg_volunteer" onclick="volunteer_click();" class="ui-helper-hidden">Volunteer!</button>
+<button type=" button" id="dlg_close" onclick="index_controller" value="12">Close</button>
+</form>
+
+
+
+
+<script>
+
+
+$(document).ready(function(){
+var _need=0;
+query=_model_header+"action=index_event&event_id="+_event_id;
+
+$.get(query,function(data){
+	var objEvent=$.parseJSON(data);
+	_event_name=objEvent.event_name;
+	$("#dialogcontent").html("<h3>"+objEvent.event_name+"</h3>");
+	$("#dlg_event_date").html(objEvent.event_date);
+	$("#dlg_event_location").html(objEvent.event_location);
+	$("#dlg_event_start_time").html(objEvent.event_start_time);
+	$("#dlg_event_city").html(objEvent.event_city);
+	$("#dlg_event_contact").html(objEvent.event_contact);
+	$("#dlg_event_phone").html(objEvent.event_phone);
+	$("#dlg_event_email").html(objEvent.event_email);
+	});
+query=_model_header+"action=index_volunteer_need_count&event_id="+_event_id;
+
+$.get(query, function(data){
+var objEvent=$.parseJSON(data);
+if (objEvent.need==0)
+{
+$("#volunteercontent").html("<B>Thank you but no Volunteers needed");	
+}
+else {
+_need=parseInt(objEvent.need);
+get_roles();
+return true;
+}
+});
+
+});
+
+
+
+
+
+
+</script>

@@ -1,0 +1,72 @@
+
+<h2>Create a New  Event</h2>
+<form  id="frm1" action="">
+<table>
+<tr><td>Choose a template(optional):</td>
+<td><div id="lstEvents"></div></td></tr>
+<tr><td class=red><div>Choose a Date</div></td>
+<td><input type=text id="datepicker" name="datepicker" value="Choose Date"/></td></tr>
+<tr><td class=red>Choose Begin TIme:</td>
+<td><div id="start_time" name="start_time">start_time</div></td></tr>
+<tr>
+<td class=red>Choose End Time:</td>
+<td><div id="end_time" name="start_time">end_time</div></td></tr>
+<tr>
+<td class=red>Event Short Name</td>
+<td><input type=text placeholder=' up to 20 chars' id="event_short_name" name="event_short_name"  size=20  onChange="_event_short_name=$(this).val();" /></td>
+</tr>
+<tr>
+<td><label class=red>Event Long Name </label></td>
+ <td><input type=text id="event_long_name" name="event_long_name" placeholder=' up to 50 chars' size=50 value="" onChange="_event_long_name=$(this).val();"  /></td>
+</tr>
+<tr><td class=red>Location:</td><td><input type=text placeholder=' up to 30 chars' id="event_location" name="event_location" onChange="_event_location=$(this).val();" /></td></tr>
+<tr><td class=red>Address:</td><td><input type=text placeholder=' up to 50 chars' id="event_address" name="event_address" onChange="_event_address=$(this).val();" /></td></tr>
+
+<tr><td class=red>City:</td><td><input type=text id="event_city" placeholder=' up to 30 chars' name="event_city" onChange="_event_city=$(this).val();" /></td></tr>
+<tr><td class=red>State:</td><td><input type=text id="event_state" size=2 name="event_state" onChange="_event_state=$(this).val();" /></td></tr>
+<tr><td class=red>Zipcode:</td><td><input type=text id="event_zip" name="event_zip" size=12 onChange="_event_zip=$(this).val();" /></td></tr>
+
+<tr><td>Contact:</td><td><input type=text id="event_contact" placeholder=' up to 30 chars' name="event_contact" size=30 onChange="_event_contact=$(this).val();" /></td></tr>
+<tr><td>Phone:</td><td><input type=text id="event_phone" name="event_phone" onChange="_event_phone=$(this).val();" /></td></tr>
+<tr><td>Email:</td><td><input type=text id="event_email" name="event_email" class=s30 onChange="_event_email=$(this).val();" /></td></tr>
+
+<tr id="copy_vol" class="ui-helper-hidden"><td>Copy Volunteer Info:</td><td><input type=checkbox checked id="event_copy_volunteers" onChange="_event_copy_volunteers=$(this).is(':checked');" /></td></tr>
+
+
+</table>
+<table>
+<tr>
+<td><button id="btn_new_event" onclick=";return validate_frm();">Complete</button>
+
+
+</form></td>
+<td>
+<form id="frm2" action=""><button type=submit id="btn_newevent_close"> Close</button></form>
+</td></tr>
+</table>
+<script>
+$(document).ready(function(){
+
+newevent_ready();
+
+/*
+$("#btn_newevent_close").click(function( event ) {
+event.preventDefault();
+$("#frm1").removeData('validator');
+index_controller();
+return false;
+});
+*/
+
+
+});
+
+
+function validate_frm(){
+if ( ($("#frm1").valid()===true)){
+event_insert();
+ }
+return false;
+}
+
+</script>

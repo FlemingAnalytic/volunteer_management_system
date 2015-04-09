@@ -1,0 +1,44 @@
+	<h3><span id="event_roles_event_name"></span> Roles</h3>
+		<table width=100%>
+		<tr>
+			<td>Choose Event Role:</td> 
+			<td><div id="evt_role_lst"></div></td>
+		</tr>
+		<tr>
+			<td>Role Title</td>
+			<td><input type=text id=event_role_title required onChange="_event_role_title=$(this).val();"/></td>	
+		</tr>
+		<tr>	
+			<td>Role Description</td>
+			<td><input type=text size=100 id=event_role_description onchange="_event_role_description=$(this).val();" /></td>
+		</tr>
+		<tr>	
+			<td>Role Qualifications</td>		
+			<td><input type=text size=100 id=event_role_qualifications onchange="_event_role_qualifications=$(this).val();" /></td>
+		</tr>
+		<tr>
+			<td>Role Minutes Before</td>	
+			<td><div id="event_role_pre_mins">pre</div></td>
+		</tr>
+		<tr>
+			<td>Role Minutes After</td>
+			<td><div id="event_role_post_mins"></div></td>			
+		</tr>
+		<tr>
+			<td>Volunteers Needed</td>
+			<td><input type=text id="event_role_qty" onchange="alert($(this).val());"/></td></tr>
+		</tr>
+			
+	</table>
+<form action="">
+<button id="btn_update_event_event_role" onclick="event_role_update();return false;">Update Role</button>
+<button id="btn_event_role_volunteers" onclick="event_role_volunteers();return false;">Volunteer Assignment</button>
+<button id="btn_event_role_close" onclick="index_controller();return true;">Close</button>
+</form>
+
+<script>
+	$(document).ready(function(){
+		event_roles_ready();
+	});
+	
+</script>
